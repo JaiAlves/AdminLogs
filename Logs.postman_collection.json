@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "7aeff3a9-9227-4468-9e36-9e5744a14ca1",
+		"name": "Logs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get All loads",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/log/load",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"log",
+						"load"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get one Load by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/log/load/xx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"log",
+						"load",
+						"xx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Files by GroupName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/log/getFiles?groupName=DCB_GOOGLE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"log",
+						"getFiles"
+					],
+					"query": [
+						{
+							"key": "groupName",
+							"value": "DCB_GOOGLE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "complete Load by groupName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/log/load?groupName=DCB_NON_GOOGLE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"log",
+						"load"
+					],
+					"query": [
+						{
+							"key": "groupName",
+							"value": "DCB_NON_GOOGLE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read files by loadName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/log/readFiles?name=xx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"log",
+						"readFiles"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "xx"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
