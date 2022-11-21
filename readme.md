@@ -1,4 +1,4 @@
-Aplicação de leitura de arquivos de log e aramazenamento em db.
+Aplicação de leitura de arquivos de log e armazenamento em db.
 
 Essa aplicação foi desenvolvida para obter os logs de diversas pods/microserviços dos kubernetes e adicionar seu conteúdo no data base PostgreSql.
 
