@@ -2,12 +2,12 @@ insert into config (id, name_space)
 select nextval('config_seq'), 'phxl';
 
 
-insert into config_log(id , start_pod_name, path_log, log_name)
-select nextval('config_log_seq'), 'mno-mg', '/logs/drum_mg/' , 'MG_62003143.log';
+insert into config_log(id , group_name, start_pod_name, path_log, log_name)
+select nextval('config_log_seq'), 'MNO_MG', 'mno-mg', '/logs/drum_mg/' , 'MG_62003143.log';
 
 
-insert into config_log(id , start_pod_name, path_log, log_name)
-select nextval('config_log_seq'), 'managed-notification-handler', '/logs/drum_galactus/' , 'queue-1811_managed_charge_notif_queue.log';
+insert into config_log(id , group_name, start_pod_name, path_log, log_name)
+select nextval('config_log_seq'), 'MANAGED_NOTIF','managed-notification-handler', '/logs/drum_galactus/' , 'queue-1811_managed_charge_notif_queue.log';
 
 
 --flow SMS receiveMO
