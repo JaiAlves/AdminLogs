@@ -17,7 +17,7 @@ Essa aplicação foi desenvolvida para obter os logs de diversas pods/microservi
 		Obs: se precisar refazer os objetos, temos o arquivo drop_objects que irá apagar as sequences e tabelas.	
 		
 		
-	1.2- Applicação java
+	1.2- Aplicação java
 
 		- mvn clean install
 		
