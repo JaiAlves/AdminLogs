@@ -1,0 +1,17 @@
+version: "3"
+services:
+    pg-tasks:
+      container_name: pg-logs
+      image: postgres:13.8
+      ports:
+        - 5433:5432
+      environment:
+        - POSTGRES_DB=logs
+        - POSTGRES_PASSWORD=logs
+      volumes:
+        - postgresql:/var/lib/postgresql
+        - postgresql_data:/var/lib/postgresql/data
+
+volumes:
+  postgresql:
+  postgresql_data:
