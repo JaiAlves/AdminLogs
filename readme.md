@@ -1,8 +1,8 @@
 Aplicação de leitura de arquivos de log e aramazenamento em db.
 
-Essa aplicação foi desenvolvida para obter os logs de pods dos kubernetes e adicionar seu conteúdo no data base Postgrsql.
+Essa aplicação foi desenvolvida para obter os logs de diversas pods/microserviços dos kubernetes e adicionar seu conteúdo no data base PostgreSql.
 
-- Install:
+- Instalação:
 
 	1.1- Database 
 		- Na pasta onde se encontra o arquivo docker-compose.yaml rodar o comando para subir um bco de dados no docker:
@@ -34,7 +34,7 @@ Essa aplicação foi desenvolvida para obter os logs de pods dos kubernetes e ad
 		- path onde os arquivos de logs serão salvos
 			path.file.logs=/temp/logs/load
 		
-		- defição do layout do arquivo para dois campos, data e type (INFO, ERROR, WARN, etc)
+		- definição do layout do arquivo para dois campos, data e type (INFO, ERROR, WARN, etc)
 			#layout
 			layout.ini.pos.start.date=0
 			layout.end.pos.start.date=24
@@ -44,7 +44,7 @@ Essa aplicação foi desenvolvida para obter os logs de pods dos kubernetes e ad
 - end points:
 	podemos ver a documentação swagger pelo endereço:
 	
-		http://localhost:8081/log/
+		http://localhost:8081/swagger-ui/index.html
 	
 
-	Obs: temos um arquivo Logs.postman_collection.json que contem a collection do postman.
+	Obs: temos um arquivo Logs.postman_collection.json que contem a collection do postman ja pronto para chamar os endpoints.
