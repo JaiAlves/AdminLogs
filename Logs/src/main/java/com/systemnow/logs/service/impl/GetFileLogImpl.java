@@ -1,8 +1,10 @@
 package com.systemnow.logs.service.impl;
 
 import com.systemnow.logs.component.ApplicationProperties;
+import com.systemnow.logs.model.Config;
 import com.systemnow.logs.model.ConfigLog;
 import com.systemnow.logs.model.Load;
+import com.systemnow.logs.repository.ConfigRepository;
 import com.systemnow.logs.service.GetFileLog;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -21,11 +23,13 @@ import java.util.Scanner;
 public class GetFileLogImpl implements GetFileLog {
     private final ApplicationProperties applicationProperties;
     private String defaultNameSpace;
+    private final ConfigRepository configRepository;
 
-    public GetFileLogImpl(ApplicationProperties applicationProperties) {
+    public GetFileLogImpl(ApplicationProperties applicationProperties, ConfigRepository configRepository) {
         this.applicationProperties = applicationProperties;
-        //TODO get from Config
-        defaultNameSpace="phxl";
+        this.configRepository = configRepository;
+        Config config = configRepository.findAll().stream().findFirst().get();
+        defaultNameSpace=config.getNameSpace();
     }
 
     @Override

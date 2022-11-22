@@ -14,6 +14,11 @@ select nextval('config_log_seq'), 'MANAGED_NOTIF','managed-notification-handler'
 insert into config_log(id ,  group_name, start_pod_name, path_log, log_name, except_start_pod_name)
 select nextval('config_log_seq'), 'RECEIVE_MO', 'workflow-engine', '/logs/drum_galactus_storm/' , 'channel-SMS_key-receiveMo_flowEntryId-9725.log', 'workflow-engine-banking';
 
+--mno charging
+insert into config_log(id ,  group_name, start_pod_name, path_log, log_name)
+select nextval('config_log_seq'), 'MNO_CHARGING', 'mno-charging', '/logs/drum_charging/' , 'charging-engine.log';
+
+
 --------------------------dcb google -----------------------------------------------------------------------------------------------------------------------------------------------
     --flow WEB chargeDOB
     insert into config_log(id , group_name, start_pod_name, path_log, log_name, except_start_pod_name)
