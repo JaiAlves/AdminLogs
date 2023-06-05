@@ -69,4 +69,35 @@ public class LoadConvert {
 
         return new ArrayList<>();
     }
+
+    public LoadResponse to(com.systemnow.logs.model.elastic.Load load) {
+        if (load==null) {
+            return null;
+        }
+
+        return LoadResponse.builder().
+                steps(getLoadStepResponseList(load)).
+                startDate(load.getStartDate()).
+                endDate(load.getEndDate()).
+                name(load.getName()).
+                status(load.getEndDate()!=null?"FINISHED":"EXECUTING").
+                build();
+    }
+
+    private List<LoadStepResponse> getLoadStepResponseList(com.systemnow.logs.model.elastic.Load load) {
+        if (load.getLoadSteps()!=null && !load.getLoadSteps().isEmpty()) {
+            List<LoadStepResponse> loadStepResponseList = new ArrayList<>();
+
+            load.getLoadSteps().forEach(s ->
+                    loadStepResponseList.add(LoadStepResponse.builder().
+                            status(EnumStatus.getById(s.getStatus())).
+                            step(EnumStep.getById(s.getStep())).
+                            startDate(s.getStartDate()).
+                            endDate(s.getEndDate()).build()));
+
+            return loadStepResponseList;
+        }
+
+        return new ArrayList<>();
+    }
 }
