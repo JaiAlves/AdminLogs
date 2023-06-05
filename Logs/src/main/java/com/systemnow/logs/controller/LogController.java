@@ -113,7 +113,8 @@ public class LogController {
         LoadResponse loadResponse = loadConvert.to(load);
 
         if (loadResponse==null) {
-            return new ResponseEntity<>(null, null, HttpStatus.NOT_FOUND);
+            log.info("getLoad by name : {} not found", name);
+            return new ResponseEntity<>(null, null, HttpStatus.BAD_REQUEST);
         }
 
         return new ResponseEntity<>(loadResponse, null, HttpStatus.OK);
@@ -132,7 +133,7 @@ public class LogController {
         Page pageLoadResponse = loadConvert.to(loadPage);
 
         if (loadPage==null || loadPage.isEmpty()) {
-            return new ResponseEntity<Page<LoadResponse>>(null, null, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Page<LoadResponse>>(null, null, HttpStatus.NO_CONTENT);
         }
 
         return new ResponseEntity<Page<LoadResponse>>(pageLoadResponse, null, HttpStatus.OK);
